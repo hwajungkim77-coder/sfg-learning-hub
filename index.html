@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="SFG Learning Hub - SFG 구성원을 위한 교육 포털" />
+  <title>SFG Learning Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="SFG Learning Hub 홈">
+        <span class="brand-mark">SFG</span>
+        <span class="brand-text">Learning Hub</span>
+      </a>
+      <nav class="desktop-nav">
+        <a href="#monthly">교육일정</a>
+        <a href="#paths">대상별 교육</a>
+        <a href="#mandatory">필수교육</a>
+        <a href="#resources">자료실</a>
+      </nav>
+      <button class="admin-link" onclick="openAdminInfo()">교육 운영관리 ↗</button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">SFG LEARNING EXPERIENCE</p>
+          <h1>배움이 현장의<br><span>성장으로 이어지도록</span></h1>
+          <p class="hero-desc">
+            SFG 구성원의 성장에 필요한 교육을 한눈에 확인하고,
+            나에게 맞는 과정을 빠르게 찾아보세요.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#monthly">이번 달 교육 보기</a>
+            <a class="btn ghost" href="#paths">나에게 맞는 교육 찾기</a>
+          </div>
+          <div class="hero-values">
+            <span>人間 사람</span><i></i><span>空間 공간</span><i></i><span>時間 시간</span>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <div class="panel-label">이번 달 한눈에</div>
+          <div class="stat-grid">
+            <div class="stat"><strong id="courseCount">4</strong><span>진행/예정 과정</span></div>
+            <div class="stat"><strong>4.7</strong><span>평균 만족도</span></div>
+            <div class="stat"><strong>88%</strong><span>교육 후 이해도</span></div>
+            <div class="stat"><strong>5</strong><span>교육 체계</span></div>
+          </div>
+          <div class="next-course">
+            <div>
+              <small>NEXT PROGRAM</small>
+              <strong>신규입문교육</strong>
+              <span>신규 입사자 · 10월 예정</span>
+            </div>
+            <button onclick="scrollToId('monthly')">일정보기 →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-section">
+      <div class="container quick-grid">
+        <button class="quick-card" onclick="scrollToId('monthly')">
+          <span class="quick-icon">01</span>
+          <div><strong>교육 일정</strong><small>월별 교육을 확인하세요</small></div>
+          <b>→</b>
+        </button>
+        <button class="quick-card" onclick="scrollToId('paths')">
+          <span class="quick-icon">02</span>
+          <div><strong>대상별 교육</strong><small>점장·스탭·조리장·본사</small></div>
+          <b>→</b>
+        </button>
+        <button class="quick-card" onclick="scrollToId('mandatory')">
+          <span class="quick-icon">03</span>
+          <div><strong>필수교육</strong><small>법정의무교육 바로가기</small></div>
+          <b>→</b>
+        </button>
+        <button class="quick-card" onclick="scrollToId('resources')">
+          <span class="quick-icon">04</span>
+          <div><strong>교육 자료실</strong><small>매뉴얼·강의자료·FAQ</small></div>
+          <b>→</b>
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="monthly">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">MONTHLY LEARNING</p>
+            <h2>10월 교육 일정</h2>
+            <p>교육 정보를 확인하고 필요한 과정에 바로 참여하세요.</p>
+          </div>
+          <div class="filters">
+            <button class="chip active" data-filter="all">전체</button>
+            <button class="chip" data-filter="리더십">리더십</button>
+            <button class="chip" data-filter="입문">입문</button>
+            <button class="chip" data-filter="필수">필수</button>
+            <button class="chip" data-filter="직무">직무</button>
+          </div>
+        </div>
+
+        <div class="course-list" id="courseList"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="paths">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">LEARNING PATH</p>
+            <h2>나에게 맞는 교육 찾기</h2>
+            <p>직책과 역할에 따라 필요한 교육을 빠르게 확인할 수 있습니다.</p>
+          </div>
+        </div>
+
+        <div class="path-tabs">
+          <button class="path-tab active" data-path="점장">점장</button>
+          <button class="path-tab" data-path="스탭">스탭</button>
+          <button class="path-tab" data-path="조리장">조리장</button>
+          <button class="path-tab" data-path="본사">본사</button>
+        </div>
+
+        <div class="path-content">
+          <div class="path-summary">
+            <p class="eyebrow">RECOMMENDED FOR</p>
+            <h3 id="pathTitle">점장</h3>
+            <p id="pathDesc">현장 운영과 사람관리를 책임지는 리더를 위한 성장 경로입니다.</p>
+          </div>
+          <div class="path-steps" id="pathSteps"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="academy">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">SFG LEARNING SYSTEM</p>
+            <h2>SFG 인재육성 체계</h2>
+            <p>SFG의 철학과 현장 전문성을 함께 성장시키는 교육 체계입니다.</p>
+          </div>
+        </div>
+        <div class="academy-grid">
+          <article><span>01</span><h3>가치 교육</h3><p>SFG 비전·미션·경영철학과 ‘물도 음식이다’의 기본 정신을 이해합니다.</p></article>
+          <article><span>02</span><h3>고객만족 서비스</h3><p>현장에서 필요한 서비스 마인드와 고객 응대 역량을 강화합니다.</p></article>
+          <article><span>03</span><h3>현장 전문가 양성</h3><p>사업부와 직무에 맞춘 실무 중심의 전문교육을 제공합니다.</p></article>
+          <article><span>04</span><h3>리더십 아카데미</h3><p>점장·조리장 등 현장 리더에게 필요한 지식·태도·스킬을 개발합니다.</p></article>
+          <article><span>05</span><h3>핵심인재 육성</h3><p>SFG의 미래를 이끌 차세대 리더를 체계적으로 육성합니다.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section mandatory" id="mandatory">
+      <div class="container mandatory-wrap">
+        <div>
+          <p class="eyebrow light">MANDATORY LEARNING</p>
+          <h2>2026 법정의무교육</h2>
+          <p>교육기간, 대상자, 이수 기준과 수강 방법을 한 곳에서 확인하세요.</p>
+          <div class="mandatory-meta">
+            <span><b>대상</b> SFG 전 임직원</span>
+            <span><b>방법</b> 온라인 LMS</span>
+            <span><b>지원</b> PC · 모바일</span>
+          </div>
+        </div>
+        <div class="mandatory-actions">
+          <button onclick="showToast('실제 휴넷 수강 URL을 연결하면 바로 사용할 수 있습니다.')">법정교육 수강하기 →</button>
+          <button class="outline" onclick="showToast('관리자용 미이수 현황 링크를 연결할 수 있습니다.')">관리자 이수현황</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="resources">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">LEARNING RESOURCE</p>
+            <h2>교육 자료실</h2>
+            <p>현장에서 바로 활용할 수 있는 교육 자료를 모았습니다.</p>
+          </div>
+          <div class="searchbox">
+            <input id="resourceSearch" placeholder="자료 검색" oninput="filterResources()" />
+          </div>
+        </div>
+
+        <div class="resource-grid" id="resourceGrid">
+          <article data-keywords="점장 리더십 매뉴얼"><span>MANUAL</span><h3>점장 리더십 가이드</h3><p>현장 리더의 기본 역할과 사람관리 원칙</p><button onclick="showToast('Google Drive 또는 사내 자료 링크를 연결하세요.')">열기 →</button></article>
+          <article data-keywords="서비스 고객응대 cs"><span>SERVICE</span><h3>SFG 서비스 기본</h3><p>고객 접점에서 지켜야 할 기본 서비스 원칙</p><button onclick="showToast('교육자료 파일 링크를 연결하세요.')">열기 →</button></article>
+          <article data-keywords="신규입문 온보딩 신입"><span>ONBOARDING</span><h3>신규입문 자료</h3><p>SFG 소개, 조직문화, 필수 안내자료</p><button onclick="showToast('신규입문 자료 링크를 연결하세요.')">열기 →</button></article>
+          <article data-keywords="법정교육 faq 로그인"><span>FAQ</span><h3>법정교육 FAQ</h3><p>로그인, 수강, 이수 관련 자주 묻는 질문</p><button onclick="showToast('FAQ 상세페이지를 연결하세요.')">열기 →</button></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section notice">
+      <div class="container notice-grid">
+        <div>
+          <p class="eyebrow">NOTICE</p>
+          <h2>교육 공지</h2>
+        </div>
+        <div class="notice-list">
+          <button><span>2026.10</span><strong>10월 교육 일정 안내</strong><b>→</b></button>
+          <button><span>2026.10</span><strong>법정의무교육 수강 안내</strong><b>→</b></button>
+          <button><span>2026.10</span><strong>SFG 사관학교 운영 안내</strong><b>→</b></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>
+        <div class="brand footer-brand"><span class="brand-mark">SFG</span><span class="brand-text">Learning Hub</span></div>
+        <p>사람이 성장하면, 현장이 성장합니다.</p>
+      </div>
+      <div class="footer-meta">
+        <span>SFG 인사실 · HRD</span>
+        <span>© 2026 SFG. Internal Learning Portal.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="courseModal" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <span class="modal-badge" id="modalCategory"></span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalDesc"></p>
+      <div class="modal-info" id="modalInfo"></div>
+      <button class="btn primary wide" onclick="showToast('Google Form / Microsoft Form 신청 링크를 연결하면 됩니다.')">교육 신청하기</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
