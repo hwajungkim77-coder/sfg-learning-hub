@@ -1,5 +1,5 @@
 const courses=[
-{id:'onboarding',day:'08',month:'OCT',cat:'입문',title:'SFG 신규입문교육',target:'신규 입사자',place:'고삼연수원',status:'예정',desc:'SFG의 철학과 조직을 이해하고 현장 적응을 돕는 입문 과정입니다.'},
+{id:'onboarding',day:'08',month:'DEC',cat:'입문',title:'SFG 신규입문교육',target:'신규 입사자',place:'고삼연수원',status:'예정',desc:'SFG의 철학과 조직을 이해하고 현장 적응을 돕는 입문 과정입니다.'},
 {id:'manager',day:'15',month:'OCT',cat:'리더십',title:'점장 역량 강화 과정',target:'점장',place:'고삼연수원',status:'예정',desc:'운영·손익·서비스·사람관리 역량을 강화하는 점장 과정입니다.'},
 {id:'academy',day:'22',month:'OCT',cat:'핵심인재',title:'SFG 사관학교',target:'관리자·핵심인재',place:'고삼연수원',status:'준비중',desc:'SFG 핵심인재와 리더를 육성하는 심화 과정입니다.'},
 {id:'mandatory',day:'01–30',month:'NOV',cat:'필수',title:'2026 법정의무교육',target:'전 임직원',place:'온라인',status:'예정',desc:'11월 중 전 임직원이 반드시 이수해야 하는 법정 필수교육입니다.'}
